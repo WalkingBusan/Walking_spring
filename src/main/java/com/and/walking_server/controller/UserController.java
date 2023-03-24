@@ -20,12 +20,13 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-//	@Autowired
-//	BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@PostMapping("join")
 	public User doJoin(@RequestBody User user) {
-		//user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		System.out.println("user 값 : "+ user);
 		userService.doInsertUser(user);
 		System.out.println("=======================join 수행 후================123");
 		return user;
