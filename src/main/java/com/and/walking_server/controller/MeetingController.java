@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.and.walking_server.model.Meeting;
+import com.and.walking_server.model.Userinmeeting;
 import com.and.walking_server.service.MeetingService;
 
 @RestController
@@ -37,5 +38,29 @@ public class MeetingController {
 		return meeting;
 	}
 	
-
+	
+	
+	
+	@PostMapping("insert")
+	public Meeting doInsertTrip(@RequestBody Meeting meeting) {
+		if(!meeting.getMeeting_title().equals("")) {
+			meetingService.doInsertMeeting(meeting);
+		}
+	
+		
+		return meeting;
+	}
+	
+	@PostMapping("insertuserinmeeting")
+	public Userinmeeting doInsertTrip(@RequestBody Userinmeeting userinmeeting) {
+		if(!userinmeeting.getMeeting_title().equals("")) {
+			meetingService.doInsertUserinmeeting(userinmeeting);
+		}
+	
+		
+		return userinmeeting;
+	}
+	
+	
+	
 }

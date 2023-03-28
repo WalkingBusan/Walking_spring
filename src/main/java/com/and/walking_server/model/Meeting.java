@@ -11,11 +11,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Meeting {
 	
-	private int meeting_id;
+	
 	private String meeting_title;
 	private String meeting_content;
-	private Long start_date;
-	private Long end_date;
-	private int user_id;
+	private String start_date;
+	private String end_date;
+	private String email;
+	private String meeting_place;
 //    var meeting_img:String
 }
+

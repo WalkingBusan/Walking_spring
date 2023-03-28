@@ -14,5 +14,16 @@
 		select * from meeting where meeting_title = #{title}
 	</select>
 	
+	<insert id="doInsertMeeting">
+		insert into meeting (meeting_title, meeting_content, reg_date, start_date, end_date, meeting_place, email) values(#{meeting_title}, #{meeting_content}, NOW(), #{start_date}, #{end_date}, #{meeting_place}, #{email})
+	</insert>
+	
+	<insert id="doInsertUserinmeeting">
+		insert into userinmeeting (email, meeting_title, reg_date) values(#{email}, #{meeting_title}, NOW())
+	</insert>
+	
+	<insert id="doInsertUserinmeeting2">
+		insert into userinmeeting (email, meeting_title, reg_date) values(#{email}, #{meeting_title}, NOW())
+	</insert>
 
 </mapper>

@@ -4,10 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.and.walking_server.mapper.MeetingMapper;
 import com.and.walking_server.model.Meeting;
+import com.and.walking_server.model.Userinmeeting;
 
+
+@Transactional
 @Service
 public class MeetingServiceImpl implements MeetingService {
 
@@ -23,4 +27,19 @@ public class MeetingServiceImpl implements MeetingService {
 	public Meeting doGetOneMeeting(String title) {
 		return meetingMapper.doGetOneMeeting(title);
 	}
+	
+	
+	@Override
+	public void doInsertMeeting(Meeting meeting) {
+		meetingMapper.doInsertMeeting(meeting);
+		meetingMapper.doInsertUserinmeeting(meeting);
+	}
+	
+	@Override
+	public void doInsertUserinmeeting(Userinmeeting userinmeeting) {
+		meetingMapper.doInsertUserinmeeting2(userinmeeting);
+		
+	}
+	
+	
 }
