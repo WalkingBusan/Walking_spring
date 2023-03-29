@@ -19,5 +19,9 @@ public interface MeetingMapper {
 	void doInsertUserinmeeting(Meeting meeting);
 	
 	void doInsertUserinmeeting2(Userinmeeting userinmeeting);
+	
+	Userinmeeting doGetOneUserinmeeting(String userinmeeting_val);
+	
+	List<String> doGetChatMemberList(int meeting_id);
 
 }

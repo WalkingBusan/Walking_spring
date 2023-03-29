@@ -41,5 +41,15 @@ public class MeetingServiceImpl implements MeetingService {
 		
 	}
 	
+	@Override
+	public Userinmeeting doGetOneUserinmeeting(String userinmeeting_val) {
+		return meetingMapper.doGetOneUserinmeeting(userinmeeting_val);
+	}
+	
+	@Override
+	public List<String> doGetChatMemberList(int meeting_id) {
+		return meetingMapper.doGetChatMemberList(meeting_id);
+	}
+	
 	
 }

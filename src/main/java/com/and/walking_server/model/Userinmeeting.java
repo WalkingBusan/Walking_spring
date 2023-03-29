@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Userinmeeting {
 	
 	
-	private String meeting_title;
+	private String meeting_id;
 	private String email;
 	
 }

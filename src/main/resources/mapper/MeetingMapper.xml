@@ -18,12 +18,20 @@
 		insert into meeting (meeting_title, meeting_content, reg_date, start_date, end_date, meeting_place, email) values(#{meeting_title}, #{meeting_content}, NOW(), #{start_date}, #{end_date}, #{meeting_place}, #{email})
 	</insert>
 	
-	<insert id="doInsertUserinmeeting">
-		insert into userinmeeting (email, meeting_title, reg_date) values(#{email}, #{meeting_title}, NOW())
-	</insert>
+	<insert id="doInsertUserinmeeting">	
+		insert into userinmeeting (email, meeting_id, reg_date, userinmeeting_val) values(#{email}, (select meeting_id from meeting where meeting_title = #{meeting_title}), NOW(), concat_ws("-",(select meeting_id from meeting where meeting_title = #{meeting_title}), #{email}))
+	</insert>	
 	
-	<insert id="doInsertUserinmeeting2">
-		insert into userinmeeting (email, meeting_title, reg_date) values(#{email}, #{meeting_title}, NOW())
-	</insert>
+	<insert id="doInsertUserinmeeting2">	
+		insert into userinmeeting (email, meeting_id, reg_date, userinmeeting_val) values(#{email}, #{meeting_id}, NOW(), concat_ws("-",#{meeting_id}, #{email}))
+	</insert>	
+	
+	<select id="doGetOneUserinmeeting" resultType="com.and.walking_server.model.Userinmeeting">
+		select * from userinmeeting where userinmeeting_val = #{userinmeeting_val}
+	</select>
+	
+	<select id="doGetChatMemberList" resultType="String">
+		select nickname from user where email IN (select email from userinmeeting where meeting_id = #{meeting_id})
+	</select>
 
 </mapper>

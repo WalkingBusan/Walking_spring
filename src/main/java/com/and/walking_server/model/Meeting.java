@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Meeting {
 	
-	
+	private int meeting_id;
 	private String meeting_title;
 	private String meeting_content;
 	private String start_date;

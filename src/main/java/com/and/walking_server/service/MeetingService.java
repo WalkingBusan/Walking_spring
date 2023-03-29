@@ -14,6 +14,11 @@ public interface MeetingService {
 	public Meeting doGetOneMeeting(String title);
 	
 	public void doInsertUserinmeeting(Userinmeeting userinmeeting);
+	
+	public Userinmeeting doGetOneUserinmeeting(String userinmeeting_val); 
+	
+	
+	public List<String> doGetChatMemberList(int meeting_id); 
 //
 //	public List<Trip> doGetMyTripList(String userName);
 }

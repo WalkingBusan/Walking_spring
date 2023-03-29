@@ -53,12 +53,27 @@ public class MeetingController {
 	
 	@PostMapping("insertuserinmeeting")
 	public Userinmeeting doInsertTrip(@RequestBody Userinmeeting userinmeeting) {
-		if(!userinmeeting.getMeeting_title().equals("")) {
+		if(!userinmeeting.getMeeting_id().equals("")) {
 			meetingService.doInsertUserinmeeting(userinmeeting);
 		}
 	
 		
 		return userinmeeting;
+	}
+	
+	
+	@GetMapping("oneUserinmeeting")
+	public Userinmeeting doGetOneUserinmeeting(@RequestParam("userinmeeting_val") String userinmeeting_val) {
+		Userinmeeting userinmeeting = meetingService.doGetOneUserinmeeting(userinmeeting_val);
+		
+		return userinmeeting;
+	}
+	
+	@GetMapping("chatMemberList")
+	public List<String> doGetChatMemberList(@RequestParam("meeting_id") int meeting_id) {
+		List<String> memberList = meetingService.doGetChatMemberList(meeting_id);
+		
+		return memberList;
 	}
 	
 	
