@@ -17,7 +17,9 @@ public class Meeting {
 	private String start_date;
 	private String end_date;
 	private String email;
-	private String meeting_place;
+	private String meeting_place_name;
+	private String meeting_place_spot;
+	private String meeting_place_imgurl;
 //    var meeting_img:String
 }
 

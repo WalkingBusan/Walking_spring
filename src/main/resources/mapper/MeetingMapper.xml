@@ -15,7 +15,7 @@
 	</select>
 	
 	<insert id="doInsertMeeting">
-		insert into meeting (meeting_title, meeting_content, reg_date, start_date, end_date, meeting_place, email) values(#{meeting_title}, #{meeting_content}, NOW(), #{start_date}, #{end_date}, #{meeting_place}, #{email})
+		insert into meeting (meeting_title, meeting_content, reg_date, start_date, end_date, meeting_place_name, meeting_place_spot, meeting_place_imgurl, email) values(#{meeting_title}, #{meeting_content}, NOW(), #{start_date}, #{end_date}, #{meeting_place_name}, #{meeting_place_spot}, #{meeting_place_imgurl}, #{email})
 	</insert>
 	
 	<insert id="doInsertUserinmeeting">	
