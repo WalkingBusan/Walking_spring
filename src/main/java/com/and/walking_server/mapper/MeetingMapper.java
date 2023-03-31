@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.and.walking_server.model.Meeting;
+import com.and.walking_server.model.User;
 import com.and.walking_server.model.Userinmeeting;
 
 @Mapper
@@ -22,6 +23,6 @@ public interface MeetingMapper {
 	
 	Userinmeeting doGetOneUserinmeeting(String userinmeeting_val);
 	
-	List<String> doGetChatMemberList(int meeting_id);
+	List<User> doGetChatMemberList(int meeting_id);
 
 }

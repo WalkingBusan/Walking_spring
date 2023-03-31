@@ -30,8 +30,8 @@
 		select * from userinmeeting where userinmeeting_val = #{userinmeeting_val}
 	</select>
 	
-	<select id="doGetChatMemberList" resultType="String">
-		select nickname from user where email IN (select email from userinmeeting where meeting_id = #{meeting_id})
+	<select id="doGetChatMemberList" resultType="com.and.walking_server.model.User">
+		select * from user where email IN (select email from userinmeeting where meeting_id = #{meeting_id})
 	</select>
 
 </mapper>

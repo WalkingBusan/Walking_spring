@@ -9,6 +9,6 @@
     </select>
     
     <insert id="doInsertUser">
-    	insert into user(email, password, nickname) values(#{email}, #{password}, #{nickname})
+    	insert into user(email, password, nickname, profile_id) values(#{email}, #{password}, #{nickname}, #{profile_id})
     </insert>
 </mapper>

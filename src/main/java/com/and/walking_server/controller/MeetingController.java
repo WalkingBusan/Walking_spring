@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.and.walking_server.model.Meeting;
+import com.and.walking_server.model.User;
 import com.and.walking_server.model.Userinmeeting;
 import com.and.walking_server.service.MeetingService;
 
@@ -70,8 +71,8 @@ public class MeetingController {
 	}
 	
 	@GetMapping("chatMemberList")
-	public List<String> doGetChatMemberList(@RequestParam("meeting_id") int meeting_id) {
-		List<String> memberList = meetingService.doGetChatMemberList(meeting_id);
+	public List<User> doGetChatMemberList(@RequestParam("meeting_id") int meeting_id) {
+		List<User> memberList = meetingService.doGetChatMemberList(meeting_id);
 		
 		return memberList;
 	}

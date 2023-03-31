@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.and.walking_server.mapper.MeetingMapper;
 import com.and.walking_server.model.Meeting;
+import com.and.walking_server.model.User;
 import com.and.walking_server.model.Userinmeeting;
 
 
@@ -47,7 +48,7 @@ public class MeetingServiceImpl implements MeetingService {
 	}
 	
 	@Override
-	public List<String> doGetChatMemberList(int meeting_id) {
+	public List<User> doGetChatMemberList(int meeting_id) {
 		return meetingMapper.doGetChatMemberList(meeting_id);
 	}
 	
